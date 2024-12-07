@@ -3,12 +3,25 @@ package com.github.com.Emerson_P.Projeto.Spring.entites;
 import java.io.Serializable;
 import java.util.Objects;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+
+@Entity
+/* Determina o nome da tabela no Banco de Dados*/
+@Table(name = "tb_user")
 /* Serializable é usado para enviar objetos */
 public class User implements Serializable {
-
-	
 	private static final long serialVersionUID = 1L;
+	
+	/* Determina qual dos atributo é o id*/
+	@Id 
+	/* Determina que o id é Auto-increment */
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long Id;
+	
 	private String name;
 	private String email;
 	private String phone;
