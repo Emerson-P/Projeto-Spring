@@ -20,9 +20,9 @@ public class UserService {
 		return repository.findAll();
 	}
 	
-	public Optional<User> findById(Long id) {
+	public User findById(Long id) {
 		Optional<User> objetoUser = repository.findById(id);
-		return objetoUser;
+		return objetoUser.get();
 	}
 	
 	}
